@@ -5,6 +5,9 @@ export PATH=~/.local/bin:$PATH
 # added by Miniconda2 4.3.21 installer
 export PATH="/Users/fernando.farfan/miniconda2/bin:$PATH"
 
+# Added Maven path
+export PATH="/opt/apache-maven-3.5.3/bin:$PATH"
+
 # OVAT dir aliases
 alias rset='cd ~/checkout/oncomine-variant-annotation-tool/oncomine-rulesets/src/main/resources/content/ionreporter510'
 alias scripts='cd ~/checkout/oncomine-variant-annotation-tool/ovat/src/main/resources/scripts/'
