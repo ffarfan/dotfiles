@@ -24,3 +24,7 @@ cols() {
     head -n1 "$1" | tr '\t' '\n' | nl -ba
 }
 
+# Customization of pep8 routine
+my_pep8() {
+    pep8 --max-line-length=120 --ignore=E127,E128,E402,E722 "$1"
+}
