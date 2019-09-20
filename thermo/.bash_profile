@@ -2,6 +2,9 @@ alias ll='ls -ltrh'
 
 export PATH=~/.local/bin:$PATH
 
+export CLICOLOR=1
+export LSCOLORS=GxFxCxDxBxegedabagaced
+
 # added by Miniconda2 4.3.21 installer
 export PATH="/Users/fernando.farfan/miniconda2/bin:$PATH"
 
