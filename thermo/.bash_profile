@@ -37,7 +37,7 @@ cols() {
 
 # Customization of pep8 routine
 my_pep8() {
-    pep8 --max-line-length=120 --ignore=E127,E128,E402,E722 "$1"
+    pycodestyle --max-line-length=120 --ignore=E127,E128,E402,E722,W504 "$1"
 }
 
 export PATH="/usr/local/opt/tcl-tk/bin:$PATH"
