@@ -1,4 +1,4 @@
-alias ll='ls -ltrh'
+alias ll='ls -lh'
 
 export PATH=~/.local/bin:$PATH
 
@@ -17,6 +17,8 @@ alias ort='cd ~/checkout/ocp_end_to_end_tests/integrationTests/'
 # DRA dir aliases
 alias dra='cd ~/checkout/dra/'
 
+# OVAT Latest Executable Alias
+alias ovat='~/Downloads/ovat-2.7.14/ovat'
 # OVAT dir aliases
 alias rset='cd ~/checkout/oncomine-variant-annotation-tool/oncomine-rulesets/src/main/resources/content/ionreporter514'
 alias scripts='cd ~/checkout/oncomine-variant-annotation-tool/ovat/src/main/resources/scripts/'
@@ -40,5 +42,4 @@ my_pep8() {
     pycodestyle --max-line-length=120 --ignore=E127,E128,E402,E722,W504 "$1"
 }
 
-export PATH="/usr/local/opt/tcl-tk/bin:$PATH"
 export PATH="/usr/local/opt/tcl-tk/bin:$PATH"
