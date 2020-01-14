@@ -18,7 +18,7 @@ alias ort='cd ~/checkout/ocp_end_to_end_tests/integrationTests/'
 alias dra='cd ~/checkout/dra/'
 
 # OVAT Latest Executable Alias
-alias ovat='~/Downloads/ovat-2.7.14/ovat'
+alias ovat='~/Downloads/ovat-3.0.7/ovat'
 # OVAT dir aliases
 alias rset='cd ~/checkout/oncomine-variant-annotation-tool/oncomine-rulesets/src/main/resources/content/ionreporter514'
 alias scripts='cd ~/checkout/oncomine-variant-annotation-tool/ovat/src/main/resources/scripts/'
