@@ -1,48 +1,5 @@
-# Path to your oh-my-zsh configuration.
-ZSH=$HOME/.oh-my-zsh
-ZSH_SCRIPT_DIR=$(dirname $(readlink -f ${HOME}/.zshrc))
-
-# Set name of the theme to load.
-# Look in ~/.oh-my-zsh/themes/
-# Optionally, if you set this to "random", it'll load a random theme each
-# time that oh-my-zsh is loaded.
-ZSH_THEME="matt"
-
-# Comment this out to disable bi-weekly auto-update checks
-# DISABLE_AUTO_UPDATE="true"
-
-# Uncomment to change how often before auto-updates occur? (in days)
-# export UPDATE_ZSH_DAYS=13
-
-# Uncomment following line if you want to disable autosetting terminal title.
-# DISABLE_AUTO_TITLE="true"
-
-# Uncomment following line if you want to disable command autocorrection
-DISABLE_CORRECTION="true"
-
-# Uncomment following line if you want red dots to be displayed while waiting for completion
-# COMPLETION_WAITING_DOTS="true"
-
-# Uncomment following line if you want to disable marking untracked files under
-# VCS as dirty. This makes repository status check for large repositories much,
-# much faster.
-# DISABLE_UNTRACKED_FILES_DIRTY="true"
-
-# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
-# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
-# Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(github gitfast)
-
-source $ZSH/oh-my-zsh.sh
-
-# Setup path properly over ssh
-source $HOME/.profile
-
 # support 256 colors
 export TERM=xterm-256color
-
-#git uses sublime
-export EDITOR="subl -w"
 
 # resume downloads if dc'd
 alias wget='wget -c'
@@ -77,25 +34,11 @@ function say() {
     fi
 }
 
-function fortune() {
-    local phrase
-    phrase=`wget -T 2 -O - -q http://www.iheartquotes.com/api/v1/random\?max_characters=300 || echo "fart"`
-    echo ${phrase} | sed "s/&quot;/\"/g" | sed -e "s!http[s]\?://\S*!!g"
-}
-
-alias quote='say `fortune`'
 alias bored='while :; do quote && sleep 4; done'
 alias lol='say lol'
 alias yo='say yo-yo'
 alias hey='say oh hai'
 alias fart='say pffttbbttbt'
-
-# apt crap
-alias install='sudo apt-get install'
-alias remove='sudo apt-get remove'
-alias update='sudo apt-get update'
-alias upgrade='sudo apt-get update && sudo apt-get dist-upgrade'
-alias search='apt-cache search'
 
 # more dots
 alias ..='cd ..'
@@ -109,31 +52,6 @@ alias count='wc -l'
 alias shutdown='quote && sudo shutdown -h now'
 alias reboot='sudo shutdown -r now'
 alias logout='gnome-session-quit'
-
-alias zedit='subl ~/.zshrc'
-alias zup='source ~/.zshrc'
-
-alias which-package='dpkg-query -S'
-
-# debian
-alias dquilt="quilt --quiltrc=${HOME}/.quiltrc-dpkg"
-
-# gsettings
-alias caps-is-control="gsettings set org.gnome.desktop.input-sources xkb-options \"['ctrl:nocaps']\""
-
-function deb-extract() {
-    mkdir -p $2
-    dpkg-deb -x $1 $2
-    dpkg-deb --control $1 $2/DEBIAN
-}
-
-function deb-build() {
-    dpkg -b $1 $2
-}
-
-alias m='build-project'
-alias r='run-project'
-alias mr='m && r'
 
 # pipe to grep
 alias -g '@'="| command grep"
@@ -160,139 +78,3 @@ function gclone()
     shift
     git clone $gitpath "$@"
 }
-
-# Git mode! work in progress
-function rm_git_mode()
-{
-    if git rev-parse --git-dir > /dev/null 2>&1; then
-        local output
-        output=`git rm $@ 2>&1`
-        local ret="$?"
-        if [ $ret -ne 128 ]; then
-            echo $output
-            return $ret
-        fi
-    fi
-    command rm "$@"
-}
-function mv_git_mode()
-{
-    if git rev-parse --git-dir > /dev/null 2>&1; then
-        local output
-        output=`git mv $@ 2>&1`
-        local ret="$?"
-        if [ $ret -ne 128 ]; then
-            echo $output
-            return $ret
-        fi
-    fi
-    command mv "$@"
-}
-function alias_git_mode()
-{
-    local aliases="$(git config --get-regexp '^alias.' | sed s/alias.// | awk '{print $1}')"
-    local git_builtins="add am annotate apply archive bisect blame branch bundle cat-file check-attr check-ref-format checkout checkout-index cherry cherry-pick clean clone column commit commit-tree config count-objects credential credential-cache credential-store daemon describe diff diff-files diff-index diff-tree difftool fast-export fast-import fetch fetch-pack filter-branch fmt-merge-msg for-each-ref format-patch fsck fsck-objects gc get-tar-commit-id grep hash-object help http-backend http-fetch http-push imap-send index-pack init init-db instaweb log lost-found ls-files ls-remote ls-tree mailinfo mailsplit merge merge-base merge-file merge-index merge-octopus merge-one-file merge-ours merge-recursive merge-resolve merge-subtree merge-tree mergetool mktag mktree name-rev notes p4 pack-objects pack-redundant pack-refs patch-id peek-remote prune prune-packed pull push quiltimport read-tree rebase receive-pack reflog relink remote remote-ext remote-fd remote-ftp remote-ftps remote-http remote-https remote-testgit remote-testsvn repack replace repo-config request-pull rerere reset rev-list rev-parse revert send-pack sh-i18n--envsubst shell shortlog show show-branch show-index show-ref stage stash status stripspace submodule symbolic-ref tag tar-tree unpack-file unpack-objects update-index update-ref update-server-info upload-archive upload-pack var verify-pack verify-tag web--browse whatchanged write-tree"
-    local hub_builtins="alias"
-    _git_mode_commands=(${(ps:\n:)${aliases}} ${(ps: :)${git_builtins}})
-    for word in $_git_mode_commands; do
-        alias "$word"="git $word"
-    done
-    alias mv="mv_git_mode"
-    alias rm="rm_git_mode"
-}
-function unalias_git_mode()
-{
-    for word in $_git_mode_commands; do
-        unalias "$word"
-    done
-    unalias mv
-    unalias rm
-}
-# toggle git mode or run a single command with git
-unalias g
-function g()
-{
-    if [ "$#" -eq 0 ]; then
-        if [ $GIT_MODE ]; then
-            unset GIT_MODE
-            unalias_git_mode
-        else
-            export GIT_MODE=true
-            alias_git_mode
-        fi
-    else
-        git $@
-    fi
-}
-if [ $GIT_MODE ]; then
-    alias_git_mode
-fi
-
-function j()
-{
-    if [ "$#" -eq 0 ]; then
-        if [[ -z $UNDER_JHBUILD ]]; then
-            command jhbuild shell
-        else
-            exit
-        fi
-    else
-        command jhbuild run $@
-    fi
-}
-
-# Quick navigate commands
-function alias_zip_mode()
-{
-    for shortcut in ${(@k)_zip_mode_commands}; do
-        alias "$shortcut"="cd ${_zip_mode_commands[$shortcut]}"
-    done
-}
-function unalias_zip_mode()
-{
-    for shortcut in ${(@k)_zip_mode_commands}; do
-        unalias "$shortcut"
-    done
-}
-function z()
-{
-    typeset -gx -A _zip_mode_commands
-    for dir in $HOME/checkout/* ; do
-        shortcut=$(basename $dir)
-        shortcut=${shortcut#gnome-}
-        shortcut=${shortcut#eos-knowledge-}
-        shortcut=${shortcut#eos-}
-        _zip_mode_commands[$shortcut]=$dir
-    done
-    if [ "$#" -eq 0 ]; then
-        if [ $ZIP_MODE ]; then
-            unset ZIP_MODE
-            unalias_zip_mode
-        else
-            export ZIP_MODE=true
-            alias_zip_mode
-        fi
-    else
-        cd ${_zip_mode_commands[$1]}
-    fi
-}
-if [ $ZIP_MODE ]; then
-    alias_zip_mode
-fi
-
-h() { cd ~/$1; }
-_h() { _files -W ~/ -/; }
-compdef _h h
-
-alias c="command"
-
-if [ -z $FIRST_INCLUDE ]; then
-    export FIRST_INCLUDE=true
-    g
-    # z
-    # j
-fi
-
-# TODO
-# intergrate with hub
-# autocomplete for huboard github commands
