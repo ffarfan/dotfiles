@@ -14,26 +14,32 @@ export PATH="/Users/fernando.farfan/miniconda2/bin:$PATH"
 # Added Maven path
 export PATH="/opt/apache-maven-3.5.3/bin:$PATH"
 
+CHECKOUT_DIR=$HOME"/checkout"
 # ORT dir aliases
-alias ort='cd ~/checkout/ocp_end_to_end_tests/integrationTests/'
+alias ort='cd ${CHECKOUT_DIR}/ocp_end_to_end_tests/integrationTests/'
 
 # DRA dir aliases
-alias dra='cd ~/checkout/dra/'
+alias dra='cd ${CHECKOUT_DIR}/dra/'
 
 # OVAT Latest Executable Alias
 alias ovat='~/Downloads/ovat-3.0.7/ovat'
 # OVAT dir aliases
-alias rset='cd ~/checkout/oncomine-variant-annotation-tool/oncomine-rulesets/src/main/resources/content/ionreporter514'
-alias scripts='cd ~/checkout/oncomine-variant-annotation-tool/ovat/src/main/resources/scripts/'
-alias dc='cd ~/checkout/oncomine-variant-annotation-tool/ovat/src/main/resources/test_artifacts/data_consistency'
-alias ov='cd ~/checkout/oncomine-variant-annotation-tool'
-alias content='cd ~/checkout/oncomine-variant-annotation-tool/ovat/src/main/resources/content_builds'
-alias vcfs='cd ~/checkout/oncomine-variant-annotation-tool/oncomine-rulesets/src/test/resources/vcf'
+OVAT_DIR=$CHECKOUT_DIR'/oncomine-variant-annotation-tool'
+alias ov='cd ${OVAT_DIR}/'
+alias rset='cd ${OVAT_DIR}/oncomine-rulesets/src/main/resources/content/ionreporter514'
+alias scripts='cd ${OVAT_DIR}/ovat/src/main/resources/scripts/'
+alias dc='cd ${OVAT_DIR}/ovat/src/main/resources/test_artifacts/data_consistency'
+alias content='cd ${OVAT_DIR}/ovat/src/main/resources/content_builds'
+alias vcfs='cd ${OVAT_DIR}/oncomine-rulesets/src/test/resources/vcf'
 
 # LIFE LAB dir aliases
-alias lifelab='cd ~/checkout/lifelab_support'
-alias janssen='cd ~/checkout/lifelab_support/Janssen'
-alias corelims='cd ~/checkout/lifelab_support/Corelims'
+LIFELAB_DIR=$CHECKOUT_DIR'/lifelab_support'
+alias lifelab='cd ${LIFELAB_DIR}'
+alias janssen='cd ${LIFELAB_DIR}/Janssen'
+alias corelims='cd ${LIFELAB_DIR}/Corelims'
+
+# AXMAN dir aliases
+alias axman='cd ${CHECKOUT_DIR}/actionability-content/'
 
 # Util to display tsv cols
 cols() {
