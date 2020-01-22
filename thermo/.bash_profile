@@ -22,7 +22,7 @@ alias ort='cd ${CHECKOUT_DIR}/ocp_end_to_end_tests/integrationTests/'
 alias dra='cd ${CHECKOUT_DIR}/dra/'
 
 # OVAT Latest Executable Alias
-alias ovat='~/Downloads/ovat-3.0.7/ovat'
+alias ovat='~/Downloads/ovat-3.0.8/ovat'
 # OVAT dir aliases
 OVAT_DIR=$CHECKOUT_DIR'/oncomine-variant-annotation-tool'
 alias ov='cd ${OVAT_DIR}/'
