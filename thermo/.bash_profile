@@ -64,6 +64,9 @@ my_pep8() {
     pycodestyle --max-line-length=120 --ignore=E127,E128,E402,E722,W504 "$1"
 }
 
+# Alias for vulture to always apply min-confidence
+alias vulture='vulture --min-confidence 61'
+
 # Combine mkdir & cd; create directory and immediately cd into it
 mkcd() {
     mkdir -m -- "$1" && cd -P -- "$1"
