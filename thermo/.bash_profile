@@ -34,12 +34,12 @@ alias ort='cd ${CHECKOUT_DIR}/ocp_end_to_end_tests/integrationTests/'
 alias dra='cd ${CHECKOUT_DIR}/dra/'
 
 # OVAT Latest Executable Alias
-OVAT_VERSION='3.2.7'
+OVAT_VERSION='3.2.8'
 alias ovat='~/Downloads/ovat-${OVAT_VERSION}/ovat'
 # OVAT dir aliases
 OVAT_DIR=$CHECKOUT_DIR'/oncomine-variant-annotation-tool'
 alias ov='cd ${OVAT_DIR}/'
-alias rset='cd ${OVAT_DIR}/oncomine-rulesets/src/main/resources/content/ionreporter516'
+alias rset='cd ${OVAT_DIR}/oncomine-rulesets/src/main/resources/content/ionreporter518'
 alias scripts='cd ${OVAT_DIR}/ovat/src/main/resources/scripts/'
 alias dc='cd ${OVAT_DIR}/ovat/src/main/resources/test_artifacts/data_consistency'
 alias content='cd ${OVAT_DIR}/ovat/src/main/resources/content_builds'
