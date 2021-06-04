@@ -54,6 +54,9 @@ alias corelims='cd ${LIFELAB_DIR}/Corelims'
 # AXMAN dir aliases
 alias axman='cd ${CHECKOUT_DIR}/actionability-content/'
 
+# VNS dir aliases
+alias vns='cd ${CHECKOUT_DIR}/variant-name-service'
+
 # Util to display tsv cols
 cols() {
     head -n1 "$1" | tr '\t' '\n' | nl -ba
