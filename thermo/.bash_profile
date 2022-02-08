@@ -47,6 +47,7 @@ alias scripts='cd ${OVAT_DIR}/ovat/src/main/resources/scripts/'
 alias dc='cd ${OVAT_DIR}/ovat/src/main/resources/test_artifacts/data_consistency'
 alias content='cd ${OVAT_DIR}/ovat/src/main/resources/content_builds'
 alias vcfs='cd ${OVAT_DIR}/oncomine-rulesets/src/test/resources/vcf'
+alias ovat-utils='cd ${CHECKOUT_DIR}/ovat-utilities'
 
 # LIFE LAB dir aliases
 LIFELAB_DIR=$CHECKOUT_DIR'/lifelab_support'
