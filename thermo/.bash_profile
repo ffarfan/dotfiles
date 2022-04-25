@@ -31,7 +31,7 @@ export PATH="/usr/local/opt/tcl-tk/bin:$PATH"
 CHECKOUT_DIR=$HOME"/checkout"
 
 # ORT dir aliases
-alias ort='cd ${CHECKOUT_DIR}/ocp_end_to_end_tests/integrationTests/'
+alias ort='cd ${CHECKOUT_DIR}/oncomine-regression-tests/integrationTests/'
 
 # DRA dir aliases
 alias dra='cd ${CHECKOUT_DIR}/dra/'
