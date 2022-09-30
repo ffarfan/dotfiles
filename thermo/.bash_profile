@@ -61,6 +61,10 @@ alias axman='cd ${CHECKOUT_DIR}/actionability-content/'
 # VNS dir aliases
 alias vns='cd ${CHECKOUT_DIR}/variant-name-service'
 
+# UHF dir aliases
+alias uhf='cd ${CHECKOUT_DIR}/uhf'
+
+
 # Util to display tsv cols
 cols() {
     head -n1 "$1" | tr '\t' '\n' | nl -ba
