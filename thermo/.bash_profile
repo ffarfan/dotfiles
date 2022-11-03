@@ -130,4 +130,9 @@ function parse_git_dirty {
     fi
 }
 
+# Copy current dir to clipboard
+function cpwd {
+  pwd | tr -d "\r\n" | pbcopy
+}
+
 export PS1="\u@\h:\w \[\e[32m\]\`parse_git_branch\`\[\e[m\]$ "
