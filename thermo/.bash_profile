@@ -132,6 +132,7 @@ function parse_git_dirty {
 
 # Copy current dir to clipboard
 function cpwd {
+  pwd  # Print curr dir before copying to clipboard
   pwd | tr -d "\r\n" | pbcopy
 }
 
