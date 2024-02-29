@@ -32,6 +32,7 @@ CHECKOUT_DIR=$HOME"/checkout"
 
 # ORT dir aliases
 alias ort='cd ${CHECKOUT_DIR}/oncomine-regression-tests/integrationTests/'
+alias ort2='cd ${CHECKOUT_DIR}/oncomine-reporter-tests/okr_regression_tests/'
 
 # DRA dir aliases
 alias dra='cd ${CHECKOUT_DIR}/dra/'
