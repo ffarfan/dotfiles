@@ -27,6 +27,9 @@ export PATH="/opt/apache-maven-3.5.3/bin:$PATH"
 # Added TK-Inter path
 export PATH="/usr/local/opt/tcl-tk/bin:$PATH"
 
+# Added Homebrew's sbin
+export PATH="/usr/local/sbin:$PATH"
+
 # Checkout Directories
 CHECKOUT_DIR=$HOME"/checkout"
 
