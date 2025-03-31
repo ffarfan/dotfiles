@@ -60,6 +60,8 @@ alias lifelab='cd ${LIFELAB_DIR}'
 alias janssen='cd ${LIFELAB_DIR}/Janssen'
 alias corelims='cd ${LIFELAB_DIR}/Corelims'
 
+# AXMAN-OpenAI API Key
+export AZURE_OPENAI_API_KEY=e5bd0f449256464f81654932b3c34e49
 # AXMAN dir aliases
 alias axman='cd ${CHECKOUT_DIR}/actionability-content/'
 
