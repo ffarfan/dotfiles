@@ -30,6 +30,9 @@ export PATH="/usr/local/opt/tcl-tk/bin:$PATH"
 # Added Homebrew's sbin
 export PATH="/usr/local/sbin:$PATH"
 
+# Added Python's local path
+export PATH="/Users/fernando.farfan/Library/Python/3.9/bin:$PATH"
+
 # Checkout Directories
 CHECKOUT_DIR=$HOME"/checkout"
 

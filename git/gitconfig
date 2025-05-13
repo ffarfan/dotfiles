@@ -1,8 +1,8 @@
 [user]
-	name = Matt Watson
-	email = mattdangerw@gmail.com
+	name = Fernando Farfan
+	email = fernando.farfan@thermofisher.com
 [core]
-	editor = subl -w
+	editor = subl -w --new-window
 	excludesfile = ~/.gitignore
 [color]
 	status = auto
@@ -10,31 +10,41 @@
 	diff = auto
 	branch = auto
 [credential]
-	helper = cache --timeout=28800
+	helper = osxkeychain
+[pull]
+	rebase = false
 [push]
 	default = simple
 [alias]
-  s = status
-  d = diff
-  dm = diff master
-  du = !git fetch && git diff @{upstream}
-  br = branch
-  re = rebase
-  ri = rebase -i
-  rim = rebase -i master
-  ch = checkout
-  co = commit
-  edit = commit --amend
-  fix = commit --amend --no-edit
-  wip = !bash -c 'git commit -m \"wip $1\"' -
-  split = !bash -c 'git reset HEAD^ && git add -p && git commit -c ORIG_HEAD'
-  graph = log --graph --pretty=oneline --abbrev-commit --color --decorate
-  publish = push --set-upstream origin HEAD
-  pub = !git publish
-  bomb = clean -Xdf
-  nuke = clean -xdf
-  reup = !git fetch && git reset --hard @{upstream}
-  patch = !git format-patch -o ~/checkout/snips
-  stage-deletes = !git rm $(git ls-files --deleted)
+	co = checkout
+	ch = checkout
+	br = branch
+	ci = commit
+	s = status
+	st = status
+	d = diff
+	dm = diff master
+	du = !git fetch && git diff @{upstream}
+	re = rebase
+	ri = rebase -i
+	rim = rebase -i master
+	edit = commit --amend
+	fix = commit --amend --no-edit
+	wip = !bash -c 'git commit -m \"wip $1\"' -
+	split = !bash -c 'git reset HEAD^ && git add -p && git commit -c ORIG_HEAD'
+	graph = log --graph --pretty=oneline --abbrev-commit --color --decorate
+	publish = push --set-upstream origin HEAD
+	pub = !git publish
+	bomb = clean -Xdf
+	nuke = clean -xdf
+	reup = !git fetch && git reset --hard @{upstream}
+	patch = !git format-patch -o ~/checkout/snips
+	stage-deletes = !git rm $(git ls-files --deleted)
 [init]
+	defaultbranch = main
 	templatedir = ~/.git_template
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge --skip -- %f
+	process = git-lfs filter-process --skip
+	required = true
