@@ -28,10 +28,20 @@ export PATH="/opt/apache-maven-3.5.3/bin:$PATH"
 export PATH="/usr/local/opt/tcl-tk/bin:$PATH"
 
 # Added Homebrew's sbin
+export PATH="/opt/homebrew/bin:$PATH"
 export PATH="/usr/local/sbin:$PATH"
+eval "$(/opt/homebrew/bin/brew shellenv)"
+
+# Add Sublime Text's CLI
+export PATH="/Applications/Sublime Text.app/Contents/SharedSupport/bin:$PATH"
 
 # Added Python's local path
 export PATH="/Users/fernando.farfan/Library/Python/3.9/bin:$PATH"
+
+# Add Postgres paths and variables
+export PATH="/opt/homebrew/opt/postgresql@15/bin:$PATH"
+export LDFLAGS="-L/opt/homebrew/opt/postgresql@15/lib"
+export CPPFLAGS="-I/opt/homebrew/opt/postgresql@15/include"
 
 # Checkout Directories
 CHECKOUT_DIR=$HOME"/checkout"
