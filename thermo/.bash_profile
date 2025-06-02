@@ -30,7 +30,7 @@ eval "$(/opt/homebrew/bin/brew shellenv)"
 export PATH="/Applications/Sublime Text.app/Contents/SharedSupport/bin:$PATH"
 
 # Added Python's local path
-export PATH="/Users/fernando.farfan/Library/Python/3.9/bin:$PATH"
+export PATH="$HOME/Library/Python/$(ls $HOME/Library/Python | sort -V | tail -n 1)/bin:$PATH"
 
 # Add Postgres paths and variables
 export PATH="/opt/homebrew/opt/postgresql@15/bin:$PATH"
