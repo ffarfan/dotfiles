@@ -41,11 +41,7 @@ export CPPFLAGS="-I/opt/homebrew/opt/postgresql@15/include"
 CHECKOUT_DIR=$HOME"/checkout"
 
 # ORT dir aliases
-alias ort='cd ${CHECKOUT_DIR}/oncomine-regression-tests/integrationTests/'
-alias ort2='cd ${CHECKOUT_DIR}/oncomine-reporter-tests/okr_regression_tests/'
-
-# DRA dir aliases
-alias dra='cd ${CHECKOUT_DIR}/dra/'
+alias ort='cd ${CHECKOUT_DIR}/oncomine-reporter-tests/okr_regression_tests/'
 
 # OVAT Latest Executable Alias
 OVAT_VERSION='3.4.1'
@@ -61,12 +57,6 @@ alias content='cd ${OVAT_DIR}/ovat/src/main/resources/content_builds'
 alias vcfs='cd ${OVAT_DIR}/oncomine-rulesets/src/test/resources/vcf'
 alias ovat-utils='cd ${CHECKOUT_DIR}/ovat-utilities'
 
-# LIFE LAB dir aliases
-LIFELAB_DIR=$CHECKOUT_DIR'/lifelab_support'
-alias lifelab='cd ${LIFELAB_DIR}'
-alias janssen='cd ${LIFELAB_DIR}/Janssen'
-alias corelims='cd ${LIFELAB_DIR}/Corelims'
-
 # AXMAN dir aliases
 alias axman='cd ${CHECKOUT_DIR}/actionability-content/'
 
@@ -76,6 +66,8 @@ alias vns='cd ${CHECKOUT_DIR}/variant-name-service'
 # UHF dir aliases
 alias uhf='cd ${CHECKOUT_DIR}/uhf'
 
+# ONE-AI dir aliases
+alias oneai='cd ${CHECKOUT_DIR}/OncoExplorer-Ai'
 
 # Util to display tsv cols
 cols() {
