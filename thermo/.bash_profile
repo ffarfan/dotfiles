@@ -8,12 +8,6 @@ export PATH=~/.local/bin:$PATH
 # Enable timestamps on history
 export HISTTIMEFORMAT="%F %T "
 
-# Set JAVA_HOME to 1.8, so Maven does not act up!
-export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)
-
-# Add Lucene to Java class path
-export CLASSPATH=$CLASSPATH:~/lucene-8.4.1/core/lucene-core-8.4.1.jar:~/lucene-8.4.1/queryparser/lucene-queryparser-8.4.1.jar:~/lucene-8.4.1/analysis/common/lucene-analyzers-common-8.4.1.jar:~/lucene-8.4.1/demo/lucene-demo-8.4.1.jar:
-
 # CLI Colors
 export CLICOLOR=1
 export LSCOLORS=GxFxCxDxBxegedabagaced
@@ -155,3 +149,11 @@ function cpwd {
 }
 
 export PS1="\u@\h:\w \[\e[32m\]\`parse_git_branch\`\[\e[m\]$ "
+
+# JEnv Configuration
+# alias j8='jenv global 1.8'
+alias j11='jenv global 11'
+alias j17='jenv global 17.0.15'
+
+export PATH="$HOME/.jenv/bin:$PATH"
+eval "$(jenv init -)"
