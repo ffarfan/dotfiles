@@ -67,7 +67,7 @@ alias axman="cd \"${CHECKOUT_DIR}/actionability-content/\""
 alias vns="cd \"${CHECKOUT_DIR}/variant-name-service\""
 
 # UHF dir aliases
-alias uhf="cd \"${CHECKOUT_DIR}/uhf\""
+alias uhf="cd \"${CHECKOUT_DIR}/uhf-ingestion-pipelines\""
 
 # ONE-AI dir aliases
 alias oneai="cd \"${CHECKOUT_DIR}/OncoExplorer-Ai\""
