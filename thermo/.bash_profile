@@ -5,6 +5,8 @@ alias bc='bcompare'
 
 export PATH="$HOME/.local/bin:$PATH"
 
+export OKR_HEADLESS_MODE=False
+
 # Enable timestamps on history
 export HISTTIMEFORMAT="%F %T "
 
