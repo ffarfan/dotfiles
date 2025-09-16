@@ -81,7 +81,7 @@ cols() {
 
 # Customization of pep8 routine
 my_pep8() {
-    pycodestyle --max-line-length=120 --ignore=E127,E128,E402,E722,W504 --exclude=venv "$1"
+    pycodestyle --max-line-length=120 --ignore=E127,E128,E402,E722,W503,W504 --exclude=venv "$1"
 }
 
 # Alias for vulture to always apply min-confidence
