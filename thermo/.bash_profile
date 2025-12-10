@@ -133,6 +133,7 @@ export PS1="\u@\h:\w \[\e[32m\]\$(parse_git_branch)\[\e[m\]$ "
 # JEnv Configuration
 alias j11='jenv global 11'
 alias j17='jenv global 17.0.15'
+alias j21='jenv global 21.0.9'
 
 export PATH="$HOME/.jenv/bin:$PATH"
 eval "$(jenv init -)"
